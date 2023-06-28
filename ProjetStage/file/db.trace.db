@@ -1,0 +1,1524 @@
+2023-05-04 15:26:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 15:26:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDOMAINE" existe déjà
+Table "USERDOMAINE" already exists; SQL statement:
+create table UserDomaine (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber integer, roleId varchar(255), primary key (id)) [42101-214]
+2023-05-04 15:26:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERMODEL" existe déjà
+Table "USERMODEL" already exists; SQL statement:
+create table UserModel (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber integer, roleID varchar(255), primary key (id)) [42101-214]
+2023-05-04 15:26:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "USERDOMAIN0_.PASSWORD" non trouvée
+Column "USERDOMAIN0_.PASSWORD" not found; SQL statement:
+select userdomain0_.id as id1_0_0_, userdomain0_.email as email2_0_0_, userdomain0_.firstName as firstnam3_0_0_, userdomain0_.lastName as lastname4_0_0_, userdomain0_.password as password5_0_0_, userdomain0_.phoneNumber as phonenum6_0_0_, userdomain0_.roleId as roleid7_0_0_ from UserDomaine userdomain0_ where userdomain0_.id=? [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:575)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at io.agroal.pool.wrapper.ConnectionWrapper.prepareStatement(ConnectionWrapper.java:658)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:149)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:151)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.prepareQueryStatement(AbstractLoadPlanBasedLoader.java:198)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeQueryStatement(AbstractLoadPlanBasedLoader.java:162)
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeLoad(AbstractLoadPlanBasedLoader.java:104)
+	at org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:285)
+	at org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:267)
+	at org.hibernate.loader.entity.plan.PaddedBatchingEntityLoader.load(PaddedBatchingEntityLoader.java:86)
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:4550)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:4540)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:571)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:539)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:208)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:327)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:108)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:74)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:118)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1231)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1220)
+	at org.hibernate.internal.SessionImpl.access$2100(SessionImpl.java:202)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.doLoad(SessionImpl.java:2848)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.lambda$load$1(SessionImpl.java:2825)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.perform(SessionImpl.java:2781)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.load(SessionImpl.java:2825)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:3413)
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:3375)
+	at io.quarkus.hibernate.orm.runtime.session.TransactionScopedSession.find(TransactionScopedSession.java:174)
+	at org.hibernate.engine.spi.SessionLazyDelegator.find(SessionLazyDelegator.java:650)
+	at org.hibernate.Session_5b93bee577ae2f8d76647de04cfab36afbf52958_Synthetic_ClientProxy.find(Unknown Source)
+	at io.quarkus.hibernate.orm.panache.common.runtime.AbstractJpaOperations.findById(AbstractJpaOperations.java:179)
+	at org.souihi.domain.UserDomaine.findById(UserDomaine.java)
+	at org.souihi.api.UserApi.delete(UserApi.java:57)
+	at org.souihi.api.UserApi_Subclass.delete$$superforward1(Unknown Source)
+	at org.souihi.api.UserApi_Subclass$$function$$4.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:54)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:133)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:104)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:58)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:41)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:33)
+	at org.souihi.api.UserApi_Subclass.delete(Unknown Source)
+	at org.souihi.api.UserApi$quarkusrestinvoker$delete_18d1eb030975eab2b5333faf64f47aa35d6f3940.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:114)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:145)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:576)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 15:32:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 15:32:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDOMAINE" existe déjà
+Table "USERDOMAINE" already exists; SQL statement:
+create table UserDomaine (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-05-04 15:32:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERMODEL" existe déjà
+Table "USERMODEL" already exists; SQL statement:
+create table UserModel (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42101-214]
+2023-05-04 15:32:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "USERDOMAIN0_.PASSWORD" non trouvée
+Column "USERDOMAIN0_.PASSWORD" not found; SQL statement:
+select userdomain0_.id as id1_0_, userdomain0_.email as email2_0_, userdomain0_.firstName as firstnam3_0_, userdomain0_.lastName as lastname4_0_, userdomain0_.password as password5_0_, userdomain0_.phoneNumber as phonenum6_0_, userdomain0_.roleId as roleid7_0_ from UserDomaine userdomain0_ [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:575)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at io.agroal.pool.wrapper.ConnectionWrapper.prepareStatement(ConnectionWrapper.java:658)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:149)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:151)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:2122)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2059)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2037)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:956)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:357)
+	at org.hibernate.loader.Loader.doList(Loader.java:2868)
+	at org.hibernate.loader.Loader.doList(Loader.java:2850)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2682)
+	at org.hibernate.loader.Loader.list(Loader.java:2677)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:540)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:218)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1459)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1649)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1617)
+	at org.hibernate.query.Query.getResultList(Query.java:165)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:269)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at org.souihi.api.UserApi.get(UserApi.java:20)
+	at org.souihi.api.UserApi$quarkusrestinvoker$get_458c9ef52b4c83180ab57cf43ffebc046fc42b84.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:114)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:145)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:576)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 15:33:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "PASSWORD" non trouvée
+Column "PASSWORD" not found; SQL statement:
+insert into UserDomaine (email, firstName, lastName, password, phoneNumber, roleId, id) values (?, ?, ?, ?, ?, ?, ?) [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:749)
+	at org.h2.command.Parser.parseColumn(Parser.java:1256)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1241)
+	at org.h2.command.Parser.parseInsert(Parser.java:1641)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:689)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:569)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at io.agroal.pool.wrapper.ConnectionWrapper.prepareStatement(ConnectionWrapper.java:658)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$1.doPrepare(StatementPreparerImpl.java:90)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareStatement(StatementPreparerImpl.java:81)
+	at org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl.buildBatchStatement(AbstractBatchImpl.java:142)
+	at org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl.getBatchStatement(AbstractBatchImpl.java:131)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3356)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3937)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:729)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3303)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2438)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl.beforeCompletion(JtaTransactionCoordinatorImpl.java:356)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorNonTrackingImpl.beforeCompletion(SynchronizationCallbackCoordinatorNonTrackingImpl.java:47)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:37)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(SynchronizationImple.java:76)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordinator.java:360)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:91)
+	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:162)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1295)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:128)
+	at io.quarkus.narayana.jta.runtime.NotifyingTransactionManager.commit(NotifyingTransactionManager.java:70)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:374)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:166)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:104)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:58)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:41)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:33)
+	at org.souihi.api.UserApi_Subclass.post(Unknown Source)
+	at org.souihi.api.UserApi$quarkusrestinvoker$post_9762cd25609809fea4e17c5b4b40717fda95173e.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:114)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:145)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:576)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 15:34:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 15:34:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDOMAINE" existe déjà
+Table "USERDOMAINE" already exists; SQL statement:
+create table UserDomaine (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-05-04 15:34:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERMODEL" existe déjà
+Table "USERMODEL" already exists; SQL statement:
+create table UserModel (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42101-214]
+2023-05-04 15:34:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "PASSWORD" non trouvée
+Column "PASSWORD" not found; SQL statement:
+insert into UserDomaine (email, firstName, lastName, password, phoneNumber, roleId, id) values (?, ?, ?, ?, ?, ?, ?) [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:749)
+	at org.h2.command.Parser.parseColumn(Parser.java:1256)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1241)
+	at org.h2.command.Parser.parseInsert(Parser.java:1641)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:689)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:569)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at io.agroal.pool.wrapper.ConnectionWrapper.prepareStatement(ConnectionWrapper.java:658)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$1.doPrepare(StatementPreparerImpl.java:90)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareStatement(StatementPreparerImpl.java:81)
+	at org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl.buildBatchStatement(AbstractBatchImpl.java:142)
+	at org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl.getBatchStatement(AbstractBatchImpl.java:131)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3356)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3937)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:729)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3303)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2438)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl.beforeCompletion(JtaTransactionCoordinatorImpl.java:356)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorNonTrackingImpl.beforeCompletion(SynchronizationCallbackCoordinatorNonTrackingImpl.java:47)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:37)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(SynchronizationImple.java:76)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordinator.java:360)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:91)
+	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:162)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1295)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:128)
+	at io.quarkus.narayana.jta.runtime.NotifyingTransactionManager.commit(NotifyingTransactionManager.java:70)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:374)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:166)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:104)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:58)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:41)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:33)
+	at org.souihi.api.UserApi_Subclass.post(Unknown Source)
+	at org.souihi.api.UserApi$quarkusrestinvoker$post_9762cd25609809fea4e17c5b4b40717fda95173e.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:114)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:145)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:576)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 15:58:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 15:58:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDOMAINE" existe déjà
+Table "USERDOMAINE" already exists; SQL statement:
+create table UserDomaine (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-05-04 15:58:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERMODEL" existe déjà
+Table "USERMODEL" already exists; SQL statement:
+create table UserModel (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42101-214]
+2023-05-04 17:03:25 database: wrong user or password; user: "ROOT"
+org.h2.message.DbException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 17 more
+2023-05-04 17:03:26 database: wrong user or password; user: "ROOT"
+org.h2.message.DbException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 17 more
+2023-05-04 17:09:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 17:09:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDOMAINE" existe déjà
+Table "USERDOMAINE" already exists; SQL statement:
+create table UserDomaine (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-05-04 17:09:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERMODEL" existe déjà
+Table "USERMODEL" already exists; SQL statement:
+create table UserModel (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42101-214]
+2023-05-04 17:10:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "USERDOMAIN0_.PASSWORD" non trouvée
+Column "USERDOMAIN0_.PASSWORD" not found; SQL statement:
+select userdomain0_.id as id1_0_, userdomain0_.email as email2_0_, userdomain0_.firstName as firstnam3_0_, userdomain0_.lastName as lastname4_0_, userdomain0_.password as password5_0_, userdomain0_.phoneNumber as phonenum6_0_, userdomain0_.roleId as roleid7_0_ from UserDomaine userdomain0_ [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:575)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at io.agroal.pool.wrapper.ConnectionWrapper.prepareStatement(ConnectionWrapper.java:658)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:149)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:151)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:2122)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2059)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2037)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:956)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:357)
+	at org.hibernate.loader.Loader.doList(Loader.java:2868)
+	at org.hibernate.loader.Loader.doList(Loader.java:2850)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2682)
+	at org.hibernate.loader.Loader.list(Loader.java:2677)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:540)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:218)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1459)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1649)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1617)
+	at org.hibernate.query.Query.getResultList(Query.java:165)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:269)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at org.souihi.api.UserApi.get(UserApi.java:20)
+	at org.souihi.api.UserApi$quarkusrestinvoker$get_458c9ef52b4c83180ab57cf43ffebc046fc42b84.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:114)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:145)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:576)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 17:11:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "USERDOMAIN0_.PASSWORD" non trouvée
+Column "USERDOMAIN0_.PASSWORD" not found; SQL statement:
+select userdomain0_.id as id1_0_, userdomain0_.email as email2_0_, userdomain0_.firstName as firstnam3_0_, userdomain0_.lastName as lastname4_0_, userdomain0_.password as password5_0_, userdomain0_.phoneNumber as phonenum6_0_, userdomain0_.roleId as roleid7_0_ from UserDomaine userdomain0_ [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:575)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at io.agroal.pool.wrapper.ConnectionWrapper.prepareStatement(ConnectionWrapper.java:658)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:149)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:151)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:2122)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2059)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2037)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:956)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:357)
+	at org.hibernate.loader.Loader.doList(Loader.java:2868)
+	at org.hibernate.loader.Loader.doList(Loader.java:2850)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2682)
+	at org.hibernate.loader.Loader.list(Loader.java:2677)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:540)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:218)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1459)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1649)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1617)
+	at org.hibernate.query.Query.getResultList(Query.java:165)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:269)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at org.souihi.api.UserApi.get(UserApi.java:20)
+	at org.souihi.api.UserApi$quarkusrestinvoker$get_458c9ef52b4c83180ab57cf43ffebc046fc42b84.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:114)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:145)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:576)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 17:31:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 17:31:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDOMAINE" existe déjà
+Table "USERDOMAINE" already exists; SQL statement:
+create table UserDomaine (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-05-04 17:31:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERMODEL" existe déjà
+Table "USERMODEL" already exists; SQL statement:
+create table UserModel (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42101-214]
+2023-05-04 17:34:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "USERDOMAIN0_.PASSWORD" non trouvée
+Column "USERDOMAIN0_.PASSWORD" not found; SQL statement:
+select userdomain0_.id as id1_0_, userdomain0_.email as email2_0_, userdomain0_.firstName as firstnam3_0_, userdomain0_.lastName as lastname4_0_, userdomain0_.password as password5_0_, userdomain0_.phoneNumber as phonenum6_0_, userdomain0_.roleId as roleid7_0_ from UserDomaine userdomain0_ [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:575)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at io.agroal.pool.wrapper.ConnectionWrapper.prepareStatement(ConnectionWrapper.java:658)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:149)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:151)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:2122)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2059)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2037)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:956)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:357)
+	at org.hibernate.loader.Loader.doList(Loader.java:2868)
+	at org.hibernate.loader.Loader.doList(Loader.java:2850)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2682)
+	at org.hibernate.loader.Loader.list(Loader.java:2677)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:540)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:218)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1459)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1649)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1617)
+	at org.hibernate.query.Query.getResultList(Query.java:165)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:269)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at org.souihi.api.UserApi.get(UserApi.java:20)
+	at org.souihi.api.UserApi$quarkusrestinvoker$get_458c9ef52b4c83180ab57cf43ffebc046fc42b84.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:114)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:145)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:576)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 17:34:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "USERDOMAIN0_.PASSWORD" non trouvée
+Column "USERDOMAIN0_.PASSWORD" not found; SQL statement:
+select userdomain0_.id as id1_0_, userdomain0_.email as email2_0_, userdomain0_.firstName as firstnam3_0_, userdomain0_.lastName as lastname4_0_, userdomain0_.password as password5_0_, userdomain0_.phoneNumber as phonenum6_0_, userdomain0_.roleId as roleid7_0_ from UserDomaine userdomain0_ [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:575)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at io.agroal.pool.wrapper.ConnectionWrapper.prepareStatement(ConnectionWrapper.java:658)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:149)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:151)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:2122)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2059)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2037)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:956)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:357)
+	at org.hibernate.loader.Loader.doList(Loader.java:2868)
+	at org.hibernate.loader.Loader.doList(Loader.java:2850)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2682)
+	at org.hibernate.loader.Loader.list(Loader.java:2677)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:540)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:218)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1459)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1649)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1617)
+	at org.hibernate.query.Query.getResultList(Query.java:165)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:269)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at org.souihi.api.UserApi.get(UserApi.java:20)
+	at org.souihi.api.UserApi$quarkusrestinvoker$get_458c9ef52b4c83180ab57cf43ffebc046fc42b84.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:114)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:145)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:576)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 17:59:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "USERDOMAIN0_.PASSWORD" non trouvée
+Column "USERDOMAIN0_.PASSWORD" not found; SQL statement:
+select userdomain0_.id as id1_0_, userdomain0_.email as email2_0_, userdomain0_.firstName as firstnam3_0_, userdomain0_.lastName as lastname4_0_, userdomain0_.password as password5_0_, userdomain0_.phoneNumber as phonenum6_0_, userdomain0_.roleId as roleid7_0_ from UserDomaine userdomain0_ [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:575)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at io.agroal.pool.wrapper.ConnectionWrapper.prepareStatement(ConnectionWrapper.java:658)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:149)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:176)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:151)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:2122)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2059)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2037)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:956)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:357)
+	at org.hibernate.loader.Loader.doList(Loader.java:2868)
+	at org.hibernate.loader.Loader.doList(Loader.java:2850)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2682)
+	at org.hibernate.loader.Loader.list(Loader.java:2677)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:540)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:218)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1459)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1649)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1617)
+	at org.hibernate.query.Query.getResultList(Query.java:165)
+	at io.quarkus.hibernate.orm.panache.common.runtime.CommonPanacheQueryImpl.list(CommonPanacheQueryImpl.java:269)
+	at io.quarkus.hibernate.orm.panache.runtime.PanacheQueryImpl.list(PanacheQueryImpl.java:149)
+	at org.souihi.api.UserApi.get(UserApi.java:20)
+	at org.souihi.api.UserApi$quarkusrestinvoker$get_458c9ef52b4c83180ab57cf43ffebc046fc42b84.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:114)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:145)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:576)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 18:59:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 18:59:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDOMAINE" existe déjà
+Table "USERDOMAINE" already exists; SQL statement:
+create table UserDomaine (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-05-04 18:59:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERMODEL" existe déjà
+Table "USERMODEL" already exists; SQL statement:
+create table UserModel (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42101-214]
+2023-05-04 19:01:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-05-04 19:01:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDOMAINE" existe déjà
+Table "USERDOMAINE" already exists; SQL statement:
+create table UserDomaine (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-05-04 19:01:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERMODEL" existe déjà
+Table "USERMODEL" already exists; SQL statement:
+create table UserModel (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42101-214]
+2023-06-15 11:50:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-06-15 11:50:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "BOOKINGDOMAIN" existe déjà
+Table "BOOKINGDOMAIN" already exists; SQL statement:
+create table BookingDomain (id bigint not null, endTime varchar(255), price varchar(255), spaceId varchar(255), startTime varchar(255), status varchar(255), userId varchar(255), primary key (id)) [42101-214]
+2023-06-15 11:50:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ROLEDOMAIN" existe déjà
+Table "ROLEDOMAIN" already exists; SQL statement:
+create table RoleDomain (id bigint not null, role varchar(255), primary key (id)) [42101-214]
+2023-06-15 11:50:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "SPACEDOMAIN" existe déjà
+Table "SPACEDOMAIN" already exists; SQL statement:
+create table SpaceDomain (id bigint not null, adress varchar(255), ameneties varchar(255), capacity varchar(255), city varchar(255), country varchar(255), descritpion varchar(255), image varchar(255), name varchar(255), type varchar(255), userId varchar(255), zipCode varchar(255), primary key (id)) [42101-214]
+2023-06-15 11:50:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDOMAINE" existe déjà
+Table "USERDOMAINE" already exists; SQL statement:
+create table UserDomaine (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-06-15 11:50:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERMODEL" existe déjà
+Table "USERMODEL" already exists; SQL statement:
+create table UserModel (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:12:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:12:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-06-16 19:12:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "BOOKINGDAO" existe déjà
+Table "BOOKINGDAO" already exists; SQL statement:
+create table BookingDao (id bigint not null, endTime varchar(255), price varchar(255), spaceId varchar(255), startTime varchar(255), status varchar(255), userId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:12:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ROLEDAO" existe déjà
+Table "ROLEDAO" already exists; SQL statement:
+create table RoleDao (id bigint not null, role varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:12:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "SPACEDAO" existe déjà
+Table "SPACEDAO" already exists; SQL statement:
+create table SpaceDao (id bigint not null, adress varchar(255), ameneties varchar(255), capacity varchar(255), city varchar(255), country varchar(255), descritpion varchar(255), image varchar(255), name varchar(255), type varchar(255), userId varchar(255), zipCode varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:12:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:12:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDAO" existe déjà
+Table "USERDAO" already exists; SQL statement:
+create table UserDao (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-06-16 19:13:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "BOOKINGDAO" existe déjà
+Table "BOOKINGDAO" already exists; SQL statement:
+create table BookingDao (id bigint not null, endTime varchar(255), price varchar(255), spaceId varchar(255), startTime varchar(255), status varchar(255), userId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ROLEDAO" existe déjà
+Table "ROLEDAO" already exists; SQL statement:
+create table RoleDao (id bigint not null, role varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "SPACEDAO" existe déjà
+Table "SPACEDAO" already exists; SQL statement:
+create table SpaceDao (id bigint not null, adress varchar(255), ameneties varchar(255), capacity varchar(255), city varchar(255), country varchar(255), descritpion varchar(255), image varchar(255), name varchar(255), type varchar(255), userId varchar(255), zipCode varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:13:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDAO" existe déjà
+Table "USERDAO" already exists; SQL statement:
+create table UserDao (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-06-16 19:13:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "BOOKINGDAO" existe déjà
+Table "BOOKINGDAO" already exists; SQL statement:
+create table BookingDao (id bigint not null, endTime varchar(255), price varchar(255), spaceId varchar(255), startTime varchar(255), status varchar(255), userId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ROLEDAO" existe déjà
+Table "ROLEDAO" already exists; SQL statement:
+create table RoleDao (id bigint not null, role varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "SPACEDAO" existe déjà
+Table "SPACEDAO" already exists; SQL statement:
+create table SpaceDao (id bigint not null, adress varchar(255), ameneties varchar(255), capacity varchar(255), city varchar(255), country varchar(255), descritpion varchar(255), image varchar(255), name varchar(255), type varchar(255), userId varchar(255), zipCode varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:13:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDAO" existe déjà
+Table "USERDAO" already exists; SQL statement:
+create table UserDao (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-06-16 19:13:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "BOOKINGDAO" existe déjà
+Table "BOOKINGDAO" already exists; SQL statement:
+create table BookingDao (id bigint not null, endTime varchar(255), price varchar(255), spaceId varchar(255), startTime varchar(255), status varchar(255), userId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ROLEDAO" existe déjà
+Table "ROLEDAO" already exists; SQL statement:
+create table RoleDao (id bigint not null, role varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "SPACEDAO" existe déjà
+Table "SPACEDAO" already exists; SQL statement:
+create table SpaceDao (id bigint not null, adress varchar(255), ameneties varchar(255), capacity varchar(255), city varchar(255), country varchar(255), descritpion varchar(255), image varchar(255), name varchar(255), type varchar(255), userId varchar(255), zipCode varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:13:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:13:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDAO" existe déjà
+Table "USERDAO" already exists; SQL statement:
+create table UserDao (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:14:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:14:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:14:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:14:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:15:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:15:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:16:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:16:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:17:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:17:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-06-16 19:17:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "BOOKINGDAO" existe déjà
+Table "BOOKINGDAO" already exists; SQL statement:
+create table BookingDao (id bigint not null, endTime varchar(255), price varchar(255), spaceId varchar(255), startTime varchar(255), status varchar(255), userId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:17:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ROLEDAO" existe déjà
+Table "ROLEDAO" already exists; SQL statement:
+create table RoleDao (id bigint not null, role varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:17:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "SPACEDAO" existe déjà
+Table "SPACEDAO" already exists; SQL statement:
+create table SpaceDao (id bigint not null, adress varchar(255), ameneties varchar(255), capacity varchar(255), city varchar(255), country varchar(255), descritpion varchar(255), image varchar(255), name varchar(255), type varchar(255), userId varchar(255), zipCode varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:17:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:17:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDAO" existe déjà
+Table "USERDAO" already exists; SQL statement:
+create table UserDao (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:17:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-06-16 19:17:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "BOOKINGDAO" existe déjà
+Table "BOOKINGDAO" already exists; SQL statement:
+create table BookingDao (id bigint not null, endTime varchar(255), price varchar(255), spaceId varchar(255), startTime varchar(255), status varchar(255), userId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:17:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ROLEDAO" existe déjà
+Table "ROLEDAO" already exists; SQL statement:
+create table RoleDao (id bigint not null, role varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:17:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "SPACEDAO" existe déjà
+Table "SPACEDAO" already exists; SQL statement:
+create table SpaceDao (id bigint not null, adress varchar(255), ameneties varchar(255), capacity varchar(255), city varchar(255), country varchar(255), descritpion varchar(255), image varchar(255), name varchar(255), type varchar(255), userId varchar(255), zipCode varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:17:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:17:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDAO" existe déjà
+Table "USERDAO" already exists; SQL statement:
+create table UserDao (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:25:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-06-16 19:25:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "BOOKINGDAO" existe déjà
+Table "BOOKINGDAO" already exists; SQL statement:
+create table BookingDao (id bigint not null, endTime varchar(255), price varchar(255), spaceId varchar(255), startTime varchar(255), status varchar(255), userId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:25:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ROLEDAO" existe déjà
+Table "ROLEDAO" already exists; SQL statement:
+create table RoleDao (id bigint not null, role varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:25:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "SPACEDAO" existe déjà
+Table "SPACEDAO" already exists; SQL statement:
+create table SpaceDao (id bigint not null, adress varchar(255), ameneties varchar(255), capacity varchar(255), city varchar(255), country varchar(255), descritpion varchar(255), image varchar(255), name varchar(255), type varchar(255), userId varchar(255), zipCode varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:25:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:25:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDAO" existe déjà
+Table "USERDAO" already exists; SQL statement:
+create table UserDao (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:25:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:25:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:25:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:25:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:25:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:25:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:25:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:25:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:25:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:25:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:25:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:25:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:26:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:26:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:31:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:31:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:31:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:31:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:31:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:31:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:31:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "drop table if exists [*]User CASCADE "; attendu "identifier"
+Syntax error in SQL statement "drop table if exists [*]User CASCADE "; expected "identifier"; SQL statement:
+drop table if exists User CASCADE  [42001-214]
+2023-06-16 19:31:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:34:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La séquence "HIBERNATE_SEQUENCE" existe déjà
+Sequence "HIBERNATE_SEQUENCE" already exists; SQL statement:
+create sequence hibernate_sequence start with 1 increment by 1 [90035-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:53)
+	at org.h2.command.ddl.SchemaOwnerCommand.update(SchemaOwnerCommand.java:33)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at io.agroal.pool.wrapper.StatementWrapper.execute(StatementWrapper.java:235)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:74)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:167)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-06-16 19:34:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "BOOKINGDAO" existe déjà
+Table "BOOKINGDAO" already exists; SQL statement:
+create table BookingDao (id bigint not null, endTime varchar(255), price varchar(255), spaceId varchar(255), startTime varchar(255), status varchar(255), userId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:34:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ROLEDAO" existe déjà
+Table "ROLEDAO" already exists; SQL statement:
+create table RoleDao (id bigint not null, role varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:34:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "SPACEDAO" existe déjà
+Table "SPACEDAO" already exists; SQL statement:
+create table SpaceDao (id bigint not null, adress varchar(255), ameneties varchar(255), capacity varchar(255), city varchar(255), country varchar(255), descritpion varchar(255), image varchar(255), name varchar(255), type varchar(255), userId varchar(255), zipCode varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:34:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 19:34:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "USERDAO" existe déjà
+Table "USERDAO" already exists; SQL statement:
+create table UserDao (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleId varchar(255), primary key (id)) [42101-214]
+2023-06-16 19:59:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
+2023-06-16 20:04:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table User (id bigint not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), phoneNumber varchar(255), roleID varchar(255), primary key (id)) [42001-214]
